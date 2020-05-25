@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-	const url = 'https://adaiasmagdiel.github.io/lista-animes/src/data/data.json';
+	const url = 'https://raw.githubusercontent.com/AdaiasMagdiel/lista-animes/master/src/data/data.json';
 	const url_ = 'http://localhost:4200/FRONTEND/src/data/data.json';
 
 	const app = new Vue({
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		},
 		methods: {
 			loadJSON(){
-				axios.get('https://adaiasmagdiel.github.io/lista-animes/src/data/data.json').then(res => {
+				axios.get(url).then(res => {
 					this.animes = res.data;
 				});
 			},
