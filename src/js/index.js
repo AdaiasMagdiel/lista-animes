@@ -2,14 +2,26 @@ document.addEventListener('DOMContentLoaded', function(){
 	const app = new Vue({
 		el: '#app',
 		data: {
-			indexes: 0,
-			animes: {}
+			limit: 0,
+			total: 0,
+			initialData: {},
+			animes: {},
+			end: false
 		},
 		methods: {
 			loadJSON(){
-				axios.get('https://raw.githubusercontent.com/AdaiasMagdiel/lista-animes/master/src/data/data.json').then(res => {
-					this.animes = res.data;
-				});
+				let oldLimit = this.limit;
+				let limit = 3;
+
+				if(this.limit + limit > this.total){
+					this.limit = this.total;
+					this.end = true;
+				} else {
+					this.limit += limit;
+				}
+
+				let newAnimes = this.sliceObject(this.initialData, oldLimit, this.limit);
+				this.animes = {...this.animes, ...newAnimes}
 			},
 			sliceObject(object, min, max){
 				const sliced = Object.keys(object).slice(min, max).reduce((result, key) => {
@@ -25,7 +37,11 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		},
 		created(){
-			this.loadJSON();
+			axios.get('https://raw.githubusercontent.com/AdaiasMagdiel/lista-animes/master/src/data/data.json').then(res => {
+				this.initialData = res.data;
+				this.total = this.checkObjectTotal(this.initialData);
+				this.loadJSON();
+			});
 		},
 	});
 	
