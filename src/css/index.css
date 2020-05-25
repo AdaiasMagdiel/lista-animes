@@ -1,0 +1,169 @@
+*{
+	box-sizing: border-box;
+	border: none;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+}
+
+html, body{
+	background-color: #380036;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+
+div#header{
+	background-color: #121212;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 30px;
+}
+div#header h1{
+	color: #FFF;
+	font-size: 28pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+div#app{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 95%;
+}
+
+div#app div.box{
+	width: 100%;
+	margin-bottom: 30px;
+}
+div#app div.box div.year{
+	background-color: #20bf55;
+	border-bottom: 3px solid #111;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	border-radius: 7px;
+	padding: 10px 20px;
+	margin-bottom: 10px;
+}
+div#app div.box div.year h1{
+	font-size: 18pt;
+	flex: 1;
+	text-align: center;
+}
+div#app div.box div.year p{
+	cursor: pointer;
+	font-weight: bold;
+}
+
+
+div.box-animes{
+	display: grid;
+	gap: 10px;
+}
+div.box-animes div.anime{
+	background-color: #121212;
+	border-radius: 10px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	height: 300px;
+}
+div.box-animes div.anime img{
+	display: block;
+	height: 100%;
+}
+div.box-animes div.anime div.info{
+	overflow: auto;
+	padding: 10px;
+	height: 100%;
+	scrollbar-color: #20bf55 transparent;
+	scrollbar-width: thin;
+}
+div.box-animes div.anime div.info h1{
+	font-size: 14pt;
+	text-align: center;
+	margin-bottom: 20px;
+}
+div.box-animes div.anime div.info div.more{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-bottom: 20px;
+}
+div.box-animes div.anime div.info div.more p{
+	background-color: #20bf55;
+	border-radius: 5px;
+	font-weight: bold;
+	padding: 10px;
+}
+div.box-animes div.anime div.info p.sinopse{
+	text-align: justify;
+	margin-bottom: 20px;
+}
+
+button{
+	background-color: #20bf55;
+	border-radius: 5px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14pt;
+	padding: 10px 20px;
+}
+button:hover{
+	background-color: #227B52FF;
+}
+
+
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	div.box-animes{
+		grid-template-columns: 1fr;
+	}
+	div.box-animes div.anime{
+		flex-direction: column;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	div.box-animes{
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	div.box-animes{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	div.box-animes{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	div.box-animes{
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

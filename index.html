@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Lista Animes</title>
+
+		<link rel="stylesheet" type="text/css" href="src/css/index.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="src/js/index.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Lista Animes</h1>
+		</div>
+		<div id="app">
+			<div class="box" v-for="(key, value) in animes">
+				<div class="year">
+					<h1>{{ value }}</h1>
+				</div>
+				<div class="box-animes">
+					<div class="anime" v-for="item in key">
+						<img :src="item.image" :alt="item.name">
+						<div class="info">
+							<h1 class="name">{{ item.name }}</h1>
+							<div class="more">
+								<p>{{ item.gender }}</p>
+								<p>{{ item.year }}</p>
+							</div>
+							<p class="sinopse">
+								{{ item.synopsis }}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<button>Mais</button>
+		</div>
+	</body>
+</html>
