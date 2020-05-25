@@ -38,9 +38,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		},
 		created(){
 			axios.get('https://raw.githubusercontent.com/AdaiasMagdiel/lista-animes/master/src/data/data.json').then(res => {
-				this.initialData = res.data;
-				this.total = this.checkObjectTotal(this.initialData);
-				this.loadJSON();
+				this.animes = res.data;
+				//this.initialData = res.data;
+				//this.total = this.checkObjectTotal(this.initialData);
+				//this.loadJSON();
 			});
 		},
 	});
