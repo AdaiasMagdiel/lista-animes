@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-	const url = '';
+	const url = 'https://adaiasmagdiel.github.io/lista-animes/src/data/data.json';
 	const url_ = 'http://localhost:4200/FRONTEND/src/data/data.json';
 
 	const app = new Vue({
