@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		},
 		methods: {
 			loadJSON(){
-				axios.get(url).then(res => {
+				axios.get('https://adaiasmagdiel.github.io/lista-animes/src/data/data.json').then(res => {
 					this.animes = res.data;
 				});
 			},
